@@ -6,38 +6,38 @@ class Program
     {
        Console.Write(" What is your grade percentage");
        string  percentage = Console.ReadLine();
-       int numGrade = int.Parse(percentage);
+       int scoreGrade = int.Parse(percentage);
 
-         string letterGrade = "";
+         string symGrade = "";
 
-        if (numGrade >= 90)
+        if (scoreGrade >= 90)
         {
-            letterGrade = "A";
+            symGrade = "A";
         }
 
-        else if (numGrade >= 80)
+        else if (scoreGrade >= 80)
         {
-            letterGrade = "B";
+            symGrade = "B";
         }
 
-        else if (numGrade >= 70)
+        else if (scoreGrade >= 70)
         {
-            letterGrade = "C";
+            symGrade = "C";
         }
 
-        else if (numGrade >= 60)
+        else if (scoreGrade >= 60)
         {
-            letterGrade = "D";
+            symGrade = "D";
         }
 
         else
         {
-            letterGrade = "F";
+            symGrade = "F";
         }
 
-        Console.WriteLine($"your grade is : {letterGrade}");
+        Console.WriteLine($"your grade is : {symGrade}");
 
-        if (numGrade >= 70)
+        if (scoreGrade >= 70)
         {
             Console.WriteLine("You passed!");
         }
