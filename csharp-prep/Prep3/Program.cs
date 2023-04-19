@@ -4,29 +4,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        string keepPlaying = "yes";
+        string playMore = "yes";
         int guess = 0;
 
-        while (keepPlaying == "yes")
+        while (playMore == "yes")
         {
             guess = 0;
 
-            Console.Write("What is the magic number? ");
-            int magicNumber = int.Parse(Console.ReadLine());
+            Console.Write("What is the secret number? ");
+            int secretNumber = int.Parse(Console.ReadLine());
 
-            while (guess != magicNumber)
+            while (guess != secretNumber)
             {
                 Console.Write("What is your guess? ");
                 guess = int.Parse(Console.ReadLine());
 
-                if (magicNumber < guess)
+                if (secretNumber < guess)
                 {
-                    Console.WriteLine("Lower");
+                    Console.WriteLine("try Lower");
                 }
 
-                else if (magicNumber > guess)
+                else if (secretNumber > guess)
                 {
-                    Console.WriteLine("Higher");
+                    Console.WriteLine("try Higher");
                 }
 
                 else 
@@ -35,8 +35,8 @@ class Program
                 }
             }
 
-            Console.Write("Do you wish to play again? ");
-            keepPlaying = Console.ReadLine();
+            Console.Write("Do you want to play again? ");
+            playMore = Console.ReadLine();
 
         }
     }
