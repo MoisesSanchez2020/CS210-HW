@@ -135,8 +135,7 @@ namespace MindfulnessApp
                 }
             }
         }
-
-
+// This method allows the user to reflect on the good things in their life by making a list of them
 static void ListingActivity(int duration)
 {
     Console.WriteLine("Listing Activity");
@@ -152,11 +151,13 @@ static void ListingActivity(int duration)
     DateTime startTime = DateTime.Now;
     DateTime endTime = startTime.AddSeconds(duration);
 
+    // The loop runs until the specified duration has passed
     while (DateTime.Now < endTime)
     {
         Console.WriteLine("Enter a good thing in your life:");
         string item = Console.ReadLine();
 
+        // If the user inputs an empty string, continue the loop
         if (string.IsNullOrWhiteSpace(item))
         {
             Console.WriteLine("Invalid input. Please try again.");
@@ -166,5 +167,5 @@ static void ListingActivity(int duration)
         Console.WriteLine($"- {item}");
     }
 }
-    }
-    }
+}
+}
