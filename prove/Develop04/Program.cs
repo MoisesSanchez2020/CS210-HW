@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace MindfulnessApp
 {
@@ -25,31 +26,6 @@ namespace MindfulnessApp
                     break;
                 }
 
-
-
-                static int GetValidInput(int min, int max)
-{
-    int input;
-    while (true)
-    {
-        if (int.TryParse(Console.ReadLine(), out input))
-        {
-            if (input >= min && input <= max)
-            {
-                return input;
-            }
-        }
-        Console.WriteLine($"Invalid input. Please enter a number between {min} and {max}.");
-    }
-}
-
-
-static void Delay(int milliseconds)
-{
-    Thread.Sleep(milliseconds);
-}
-
-
                 Console.WriteLine("Enter the duration of the activity (in seconds): ");
                 int duration = GetValidInput(1, int.MaxValue);
 
@@ -74,15 +50,30 @@ static void Delay(int milliseconds)
             }
         }
 
-        public static async Task Delay(int milliseconds)
-{
-    await Task.Delay(milliseconds);
-}
-
-
-        private static int GetValidInput(int v1, int v2)
+        static int GetValidInput(int min, int max)
         {
-            throw new NotImplementedException();
+            int input;
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out input))
+                {
+                    if (input >= min && input <= max)
+                    {
+                        return input;
+                    }
+                }
+                Console.WriteLine($"Invalid input. Please enter a number between {min} and {max}.");
+            }
+        }
+
+        static void Delay(int milliseconds)
+        {
+            Thread.Sleep(milliseconds);
+        }
+
+        static async Task DelayAsync(int milliseconds)
+        {
+            await Task.Delay(milliseconds);
         }
 
         static void BreathingActivity(int duration)
@@ -129,7 +120,7 @@ static void Delay(int milliseconds)
                 "What is your favorite thing about this experience?",
                 "What could you learn from this experience that applies to other situations?",
                 "What did you learn about yourself through this experience?",
-                "How can you keep this experience in mind in the future?"
+                "How can you keep this experience in mind in the future?",
             };
 
             for (int i = 1; i <= duration; i++)
